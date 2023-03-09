@@ -31,5 +31,20 @@ Links:
 - push your code to the github repo
 - create a new repo on github
 - initialize local repo and add the origin to the repo on github
-- 
+- push the code to the repo
 - connect your github repo with the vercel app
+- select repo to deploy by choosing new project and deploy
+
+
+## ReactJS/NextJs
+
+- using `Link` tag will allow props to display the page
+
+### Static Assest
+
+- place all the static assets in the public directory,( images, videos, files, etc)
+
+## CSS
+
+- Create a `component.js` and a `componet.module.css` in root level `component` directory
+
