@@ -41,7 +41,7 @@ export default function Record() {
         <div id="emailHelp" className="form-text">
           Allows the doctor to view your previous medical records
         </div>
-        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-primary">Allow Access</button>
       </div>
     </div>
   );

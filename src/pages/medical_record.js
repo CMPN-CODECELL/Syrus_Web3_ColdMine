@@ -19,7 +19,7 @@ export default function Record() {
         <br></br>
         <div className={styles.container_login}>
         <div className="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">ID No.</label>
+                <label for="exampleFormControlInput1" className="form-label">ID No.</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ID No." />
             </div>
             <div className="mb-3">

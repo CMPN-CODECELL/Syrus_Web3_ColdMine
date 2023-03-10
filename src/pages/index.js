@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [ethereum, setEthereum] = useState(undefined);
   const [connectedAccount, setConnectedAccount] = useState(undefined);
-  const contractAddress = "0xB0713c14C88EAbe87b1178e9E01C1D7296a191f7";
+  const contractAddress = "0x190acfbE4B961A4465Da56ad5beC42D7C8E576C9";
   const contractABI = [
     {
       "inputs": [
@@ -286,6 +286,7 @@ export default function Home() {
 
   return <p>Connected Account: {connectedAccount}</p>
 }
+
 
 // const inter = Inter({ subsets: ["latin"] });
 
