@@ -42,6 +42,7 @@ export default function Record() {
                 <label for="exampleFormControlTextarea1" class="form-label">Date Of Birth:</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="DD/MM/YYYY"></textarea>
             </div>
+            <center><button type="button" class="btn btn-dark">Submit</button></center>
         </div>
         </div>
     );

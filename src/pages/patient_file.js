@@ -33,7 +33,7 @@ export default function Record() {
             <div className="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Medications Done In Past:</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Any Medication like Chemotherapy , Laser etc. received in the past"></textarea>
-            </div>
+            </div><center><button type="button" class="btn btn-dark">Submit</button></center>
         </div>
         </div>
     );
