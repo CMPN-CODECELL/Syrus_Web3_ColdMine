@@ -11,7 +11,42 @@ export default function Home() {
   const [ethereum, setEthereum] = useState(undefined);
   const [connectedAccount, setConnectedAccount] = useState(undefined);
 
-  const connectAccount = () => {};  
+  const handleAccounts = (accounts) => {
+    if (accounts.length > 0) {
+      const account = accounts[0];
+      console.log('We have an authorized account: ', account);
+      setConnectedAccount(account);
+    } else {
+      console.log("No authorized accounts yet")
+    }
+  };
+  
+  const getConnectedAccount = async () => {
+    if (window.ethereum) {
+      setEthereum(window.ethereum);
+    }
+  
+    if (ethereum) {
+      const accounts = await ethereum.request({ method: 'eth_accounts' });
+      handleAccounts(accounts);
+    }
+  };
+  
+  useEffect(() => {
+    getConnectedAccount();
+  }, []);
+  
+  const connectAccount = async () => {
+    if (ethereum) {
+      try {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        handleAccounts(accounts);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+  
 
   if (!ethereum) {
     return <p>Please install MetaMask to connect to this site</p>
