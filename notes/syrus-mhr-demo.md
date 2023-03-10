@@ -48,3 +48,21 @@ Links:
 
 - Create a `component.js` and a `componet.module.css` in root level `component` directory
 
+## Smart Contract/Solidity
+
+- set the pragma for the contract
+- import openzeppelin ERC721 and other files
+    - https://docs.openzeppelin.com/contracts/4.x/erc721
+- create a new contract 
+- create data structures
+- write functions for the contract
+- 
+
+## Web3js and metamask injector
+
+- https://github.com/javedblch/metamask-integration-nextjs-web3js
+
+### mint vs mine
+
+- https://101blockchains.com/crypto-minting-vs-crypto-mining/
+
