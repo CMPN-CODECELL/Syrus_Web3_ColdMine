@@ -12,39 +12,33 @@ export default function Home() {
   const [connectedAccount, setConnectedAccount] = useState(undefined);
   const [patientData, setPatientData] = useState([])
 
-  const contractAddress = "0x190acfbE4B961A4465Da56ad5beC42D7C8E576C9";
+  const contractAddress = "0x9D7f74d0C41E726EC95884E0e97Fa6129e3b5E99";
   const contractABI = [
     {
       "inputs": [
         {
           "internalType": "string",
-          "name": "_name",
+          "name": "_bloodGroup",
           "type": "string"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_age",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_designation",
-          "type": "uint256"
         },
         {
           "internalType": "string",
-          "name": "_hash",
+          "name": "_allergies",
           "type": "string"
-        }
-      ],
-      "name": "add_agent",
-      "outputs": [
+        },
         {
           "internalType": "string",
-          "name": "",
+          "name": "_medications",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_medicalHistory",
           "type": "string"
         }
       ],
+      "name": "createPatient",
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -52,131 +46,27 @@ export default function Home() {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "",
+          "name": "_patientId",
           "type": "uint256"
         }
       ],
-      "name": "doctorList",
+      "name": "getPatient",
       "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "get_doctor",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        },
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "get_doctor_list",
-      "outputs": [
-        {
-          "internalType": "address[]",
-          "name": "",
-          "type": "address[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "paddr",
-          "type": "address"
-        }
-      ],
-      "name": "get_hash",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "get_patient",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        },
         {
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
         },
         {
-          "internalType": "uint256[]",
+          "internalType": "string",
           "name": "",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
+          "type": "string"
         },
         {
           "internalType": "string",
           "name": "",
           "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "paddr",
-          "type": "address"
         },
-        {
-          "internalType": "address",
-          "name": "daddr",
-          "type": "address"
-        }
-      ],
-      "name": "get_patient_doctor_name",
-      "outputs": [
         {
           "internalType": "string",
           "name": "",
@@ -193,12 +83,25 @@ export default function Home() {
     },
     {
       "inputs": [],
-      "name": "get_patient_list",
+      "name": "getPatientCount",
       "outputs": [
         {
-          "internalType": "address[]",
+          "internalType": "uint256",
           "name": "",
-          "type": "address[]"
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "patientCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -212,19 +115,39 @@ export default function Home() {
           "type": "uint256"
         }
       ],
-      "name": "patientList",
+      "name": "patients",
       "outputs": [
         {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "bloodGroup",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "allergies",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "medications",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "medicalHistory",
+          "type": "string"
         }
       ],
       "stateMutability": "view",
       "type": "function"
     }
   ]
-  const [web3, setWeb3] = useState(null);
+  //const [web3, setWeb3] = useState(null);
   const [myContractInstance, setMyContractInstance] = useState(null);
 
   useEffect(() => {
@@ -298,20 +221,34 @@ export default function Home() {
   //     console.log('Not connected to MetaMask');
   //   }
   // };
-
-  const getPatientData = async (patientAddress) => {
-    if (ethereum && connectedAccount) {
-      const provider = new ethers.providers.Web3Provider(ethereum);
-      const signer = provider.getSigner();
-      const patientContract = new ethers.Contract(contractAddress, contractABI, signer);
-
-      const patients = await patientContract.get_patient();
-      console.log('Retrieved keyboards...', patients)
-      setPatientData(patients)
+  var accounts;
+  const CheckConnection = async (patientId) => {
+    if (ethereum) {
+      web3=new Web3(window.ethereum);
+      accounts=await window.ethereum.request({
+        method:"eth_requestAccounts"
+      });
+      console.log("Done");
+      return true;
     }
   }
   useEffect(async () => getPatientData(), [connectedAccount])
+  
+    // console.log(window)
+    var IsMetaMask = await CheckMetamaskConnection();
 
+    if (IsMetaMask) {
+      console.log("IsMetamask = true");
+      myContract = await new web3.eth.Contract(
+        SmartContractABI,
+        SmartContractAddress
+      );
+      console.log(myContract);
+      totalNFTsMinted();
+    } else {
+      alert("Metamask Not detected");
+    }
+  });
 
   if (!ethereum) {
     return <p>Please install MetaMask to connect to this site</p>
