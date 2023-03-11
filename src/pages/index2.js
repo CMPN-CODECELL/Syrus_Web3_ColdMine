@@ -213,6 +213,12 @@ async function setDetails(bloodGroup, allergies, medications,medicalHistory) {
   return (
     <div>
         <div className={styles.container_login}>
+        <h1><center>Medaverse</center></h1>
+        <h3><center>A Easy and Secure Healthcare Solution</center></h3>
+        <line></line>
+        <br></br>
+        <h1><bold><center>Patient History</center></bold></h1>
+        <br></br>
         <div className="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Blood Group:</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blood group" value={bloodGroup} onChange={handleChangeblood} />
@@ -229,7 +235,8 @@ async function setDetails(bloodGroup, allergies, medications,medicalHistory) {
                 <label for="exampleFormControlTextarea1" class="form-label">Medications Done In Past:</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" value={medications} onChange={handleChangemedic} placeholder="Any Medication like Chemotherapy , Laser etc. received in the past"></textarea>
             </div><center><button type="button" class="btn btn-dark" onClick={() => setDetails(bloodGroup, allergies, medications,medicalHistory)}>Submit</button></center>
-        </div>
+      <hr />
+<br />
       <h1>
         <center>Get Patient Data</center>
       </h1>
@@ -258,10 +265,13 @@ async function setDetails(bloodGroup, allergies, medications,medicalHistory) {
    
        
 
-      {record && <p>patient ID: {record[0]}</p>}
+      {record && <p>Patient ID: {record[0]}</p>}
       {record && <p>Blood group: {record[1]}</p>}
       {record && <p>Allergies: {record[2]}</p>}
       {record && <p>Medications: {record[3]}</p>}
+      {record && <p>Medical History: {record[4]}</p>}
     </div>
+    </div>
+
   );
 }
