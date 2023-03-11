@@ -52,7 +52,7 @@ export default function Login() {
             Verify your credentials
           </label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" onClick="LoginSubmit()">
           Submit
         </button>
         </div>

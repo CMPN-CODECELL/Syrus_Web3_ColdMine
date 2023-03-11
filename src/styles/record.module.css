@@ -2,3 +2,10 @@
     width: 1000px;
     margin: auto;
 }
+
+@media (max-width: 1250px) {
+    .container_login {
+        width: 90%;
+        margin: auto;
+    }
+}

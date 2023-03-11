@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Record() {
     return (
-        <div>
+        <div className="container">
 
         <h1><center>Medaverse</center></h1>
         <h3><center>A Easy and Secure Healthcare Solution</center></h3>

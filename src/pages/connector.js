@@ -7,7 +7,7 @@ const MetaMaskPage = () => {
   let accounts;
   let userAddress;
   let privateKey = process.env.PRIVATE_KEY;
-    const myContract;
+  // const myContract;
   useEffect(() => {
     const fetchAccount = async () => {
       try {
